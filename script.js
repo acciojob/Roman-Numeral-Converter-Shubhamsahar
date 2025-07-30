@@ -19,8 +19,17 @@ function convertToRoman(num) {
         num -= count * values[i][1];
     }
 
+ result = result.replace('DCCCC', 'CM'); // 900
+    result = result.replace('CCCC', 'CD'); // 400
+    result = result.replace('LXXXX', 'XC'); // 90
+    result = result.replace('XXXX', 'XL'); // 40
+    result = result.replace('VIIII', 'IX'); // 9
+    result = result.replace('IIII', 'IV'); // 4
 
+    return result;
 }
+
+
 
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
