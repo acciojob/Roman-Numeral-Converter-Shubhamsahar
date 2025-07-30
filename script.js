@@ -10,16 +10,16 @@ function convertToRoman(num) {
     };
 
   //your code here
- let result = '';
+  let result = '';
+    let values = Object.values(obj).reverse();
 
-    for (let i = 0; i < obj.length; i++) {
-        while (num >= obj[i][1]) {
-            result += obj[i][0];
-            num -= obj[i][1];
-        }
+    for (let i = 0; i < values.length; i++) {
+        let count = Math.floor(num / values[i][1]);
+        result += values[i][0].repeat(count);
+        num -= count * values[i][1];
     }
 
-    return result;
+
 }
 
 
