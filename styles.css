@@ -1,1 +1,32 @@
 /* Your CSS Code here. */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#number {
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px;
+}
+
+#convert {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#convert:hover {
+    background-color: #3e8e41;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px;
+}

@@ -1,5 +1,11 @@
+document.getElementById('convert').addEventListener('click', () => {
+    const number = parseInt(document.getElementById('number').value);
+    const result = convertToRoman(number);
+    document.getElementById('result').innerText = result;
+});
+
 function convertToRoman(num) {
-    const obj = [
+    const romanNumerals = [
         ['M', 1000],
         ['CM', 900],
         ['D', 500],
@@ -17,14 +23,14 @@ function convertToRoman(num) {
 
     let result = '';
 
-    for (let i = 0; i < obj.length; i++) {
-        while (num >= obj[i][1]) {
-            result += obj[i][0];
-            num -= obj[i][1];
+    for (let i = 0; i < romanNumerals.length; i++) {
+        const [symbol, value] = romanNumerals[i];
+        while (num >= value) {
+            result += symbol;
+            num -= value;
         }
     }
 
     return result;
 }
 
-console.log(convertToRoman(36));
