@@ -1,32 +1,26 @@
-/* Your CSS Code here. */
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background-color: #f0f0f0;
 }
 
-#number {
-    width: 200px;
-    height: 30px;
-    font-size: 18px;
-    padding: 10px;
-    margin: 20px;
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-#convert {
-    width: 200px;
-    height: 50px;
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+input, button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
 }
 
-#convert:hover {
-    background-color: #3e8e41;
-}
-
-#result {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 20px;
+#output {
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: bold;
 }
