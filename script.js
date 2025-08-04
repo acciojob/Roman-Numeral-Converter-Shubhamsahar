@@ -1,9 +1,5 @@
 function convertToRoman(num) {
-  if (num <= 0 || num > 100000) {
-    return "Invalid input";
-  }
-
-  const romanNumerals = [
+  const obj = [
     ['M', 1000],
     ['CM', 900],
     ['D', 500],
@@ -19,29 +15,33 @@ function convertToRoman(num) {
     ['I', 1]
   ];
 
-  let result = "";
+  let result = '';
 
-  for (let [roman, value] of romanNumerals) {
-    while (num >= value) {
-      result += roman;
-      num -= value;
+  for (let i = 0; i < obj.length; i++) {
+    while (num >= obj[i][1]) {
+      result += obj[i][0];
+      num -= obj[i][1];
     }
   }
 
   return result;
 }
 
-function convert() {
-  const input = document.getElementById("number").value;
+function handleConvert() {
+  const input = document.getElementById("numberInput").value;
   const output = document.getElementById("output");
 
-  const num = parseInt(input);
+  const number = parseInt(input);
 
-  if (isNaN(num)) {
-    output.innerText = "Please enter a valid number.";
+  if (isNaN(number) || number < 1 || number > 100000) {
+    output.textContent = "Please enter a number between 1 and 100000.";
     return;
   }
 
-  const roman = convertToRoman(num);
-  output.innerText = roman;
+  output.textContent = `Roman Numeral: ${convertToRoman(number)}`;
+}
+
+// Do not edit below this line for test compatibility
+if (typeof module !== 'undefined') {
+  module.exports = convertToRoman;
 }
